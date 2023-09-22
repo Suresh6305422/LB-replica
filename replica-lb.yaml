@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: ngi-demo
+spec:
+  minReadySeconds: 5
+  replicas: 2
+  selector:
+    matchLabels:
+      name: nginx
+  template:
+    metadata:
+      labels: 
+        name: nginx
+    spec:
+      containers:
+        - image: suri1002/spc:latest
+          name: spc
+          ports:
+            - containerPort: 8080
+              protocol: TCP
