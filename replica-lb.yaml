@@ -14,8 +14,8 @@ spec:
         name: nginx
     spec:
       containers:
-        - image: suri1002/spc:latest
+        - image: nginx
           name: spc
           ports:
-            - containerPort: 8080
+            - containerPort: 80
               protocol: TCP
